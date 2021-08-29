@@ -14,6 +14,9 @@
 		AADDC34C26DA649700E331B0 /* Kurly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AADDC34A26DA649700E331B0 /* Kurly.xcdatamodeld */; };
 		AADDC34E26DA649800E331B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AADDC34D26DA649800E331B0 /* Assets.xcassets */; };
 		AADDC35126DA649800E331B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AADDC34F26DA649800E331B0 /* LaunchScreen.storyboard */; };
+		AADDC35C26DA861A00E331B0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADDC35B26DA861A00E331B0 /* LoginViewController.swift */; };
+		AADDC35E26DA864E00E331B0 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADDC35D26DA864E00E331B0 /* SignupViewController.swift */; };
+		AADDC36026DB87F500E331B0 /* TextFieldDesigner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADDC35F26DB87F500E331B0 /* TextFieldDesigner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		AADDC34D26DA649800E331B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AADDC35026DA649800E331B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AADDC35226DA649800E331B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AADDC35B26DA861A00E331B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		AADDC35D26DA864E00E331B0 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		AADDC35F26DB87F500E331B0 /* TextFieldDesigner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesigner.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +66,41 @@
 			children = (
 				AADDC34126DA649700E331B0 /* AppDelegate.swift */,
 				AADDC34326DA649700E331B0 /* SceneDelegate.swift */,
-				AADDC34526DA649700E331B0 /* ViewController.swift */,
-				AADDC34726DA649700E331B0 /* Main.storyboard */,
+				AADDC35A26DA85CC00E331B0 /* Model */,
+				AADDC35826DA85B200E331B0 /* View */,
+				AADDC35926DA85BA00E331B0 /* Controller */,
 				AADDC34D26DA649800E331B0 /* Assets.xcassets */,
 				AADDC34F26DA649800E331B0 /* LaunchScreen.storyboard */,
 				AADDC35226DA649800E331B0 /* Info.plist */,
 				AADDC34A26DA649700E331B0 /* Kurly.xcdatamodeld */,
 			);
 			path = Kurly;
+			sourceTree = "<group>";
+		};
+		AADDC35826DA85B200E331B0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AADDC34726DA649700E331B0 /* Main.storyboard */,
+				AADDC35F26DB87F500E331B0 /* TextFieldDesigner.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AADDC35926DA85BA00E331B0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AADDC34526DA649700E331B0 /* ViewController.swift */,
+				AADDC35B26DA861A00E331B0 /* LoginViewController.swift */,
+				AADDC35D26DA864E00E331B0 /* SignupViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AADDC35A26DA85CC00E331B0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,10 +173,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AADDC35E26DA864E00E331B0 /* SignupViewController.swift in Sources */,
 				AADDC34626DA649700E331B0 /* ViewController.swift in Sources */,
 				AADDC34C26DA649700E331B0 /* Kurly.xcdatamodeld in Sources */,
 				AADDC34226DA649700E331B0 /* AppDelegate.swift in Sources */,
+				AADDC35C26DA861A00E331B0 /* LoginViewController.swift in Sources */,
 				AADDC34426DA649700E331B0 /* SceneDelegate.swift in Sources */,
+				AADDC36026DB87F500E331B0 /* TextFieldDesigner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
