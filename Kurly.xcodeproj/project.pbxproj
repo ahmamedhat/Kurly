@@ -3,10 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9451DC2777F0E3B226B91F4F /* Pods_Kurly.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA457DAF92604718902AFB7C /* Pods_Kurly.framework */; };
+		AA9E0D4326DBB5D300BA5FA0 /* BarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0D4226DBB5D300BA5FA0 /* BarberViewController.swift */; };
+		AA9E0D4526DBC6C800BA5FA0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA9E0D4426DBC6C800BA5FA0 /* GoogleService-Info.plist */; };
+		AA9E0D4726DBCE3400BA5FA0 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0D4626DBCE3400BA5FA0 /* Error.swift */; };
+		AA9E0D4926DBD28600BA5FA0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0D4826DBD28600BA5FA0 /* Constants.swift */; };
+		AA9E0D4B26DBF47D00BA5FA0 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0D4A26DBF47D00BA5FA0 /* SideMenuViewController.swift */; };
+		AA9E0D4E26DCCBC000BA5FA0 /* CustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0D4C26DCCBC000BA5FA0 /* CustomerCell.swift */; };
+		AA9E0D4F26DCCBC000BA5FA0 /* CustomerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA9E0D4D26DCCBC000BA5FA0 /* CustomerCell.xib */; };
+		AA9E0D5126DCFB8200BA5FA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0D5026DCFB8200BA5FA0 /* SettingsViewController.swift */; };
+		AA9E0D5326DE2E5B00BA5FA0 /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9E0D5226DE2E5B00BA5FA0 /* CustomerViewController.swift */; };
+		AA9E0D5626DE415400BA5FA0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA9E0D5526DE415400BA5FA0 /* IQKeyboardManagerSwift */; };
+		AAAA1FA026E0EDDC0026FB50 /* CustomerSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA1F9F26E0EDDC0026FB50 /* CustomerSideMenuViewController.swift */; };
+		AAAA1FA226E0F3270026FB50 /* CustomerReservationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA1FA126E0F3270026FB50 /* CustomerReservationsViewController.swift */; };
+		AAD76E3926DFA8C5003C1128 /* CustomerBarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD76E3826DFA8C5003C1128 /* CustomerBarberViewController.swift */; };
+		AAD76E3C26DFB8A0003C1128 /* BarberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD76E3A26DFB8A0003C1128 /* BarberCell.swift */; };
+		AAD76E3D26DFB8A0003C1128 /* BarberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD76E3B26DFB8A0003C1128 /* BarberCell.xib */; };
+		AAD76E3F26E0C162003C1128 /* Reservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD76E3E26E0C162003C1128 /* Reservation.swift */; };
 		AADDC34226DA649700E331B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADDC34126DA649700E331B0 /* AppDelegate.swift */; };
 		AADDC34426DA649700E331B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADDC34326DA649700E331B0 /* SceneDelegate.swift */; };
 		AADDC34626DA649700E331B0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AADDC34526DA649700E331B0 /* ViewController.swift */; };
@@ -20,6 +37,23 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8944C44807ADFB8599FBDE08 /* Pods-Kurly.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kurly.debug.xcconfig"; path = "Target Support Files/Pods-Kurly/Pods-Kurly.debug.xcconfig"; sourceTree = "<group>"; };
+		AA457DAF92604718902AFB7C /* Pods_Kurly.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kurly.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA9E0D4226DBB5D300BA5FA0 /* BarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberViewController.swift; sourceTree = "<group>"; };
+		AA9E0D4426DBC6C800BA5FA0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AA9E0D4626DBCE3400BA5FA0 /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		AA9E0D4826DBD28600BA5FA0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AA9E0D4A26DBF47D00BA5FA0 /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		AA9E0D4C26DCCBC000BA5FA0 /* CustomerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerCell.swift; sourceTree = "<group>"; };
+		AA9E0D4D26DCCBC000BA5FA0 /* CustomerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomerCell.xib; sourceTree = "<group>"; };
+		AA9E0D5026DCFB8200BA5FA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AA9E0D5226DE2E5B00BA5FA0 /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
+		AAAA1F9F26E0EDDC0026FB50 /* CustomerSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSideMenuViewController.swift; sourceTree = "<group>"; };
+		AAAA1FA126E0F3270026FB50 /* CustomerReservationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerReservationsViewController.swift; sourceTree = "<group>"; };
+		AAD76E3826DFA8C5003C1128 /* CustomerBarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerBarberViewController.swift; sourceTree = "<group>"; };
+		AAD76E3A26DFB8A0003C1128 /* BarberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberCell.swift; sourceTree = "<group>"; };
+		AAD76E3B26DFB8A0003C1128 /* BarberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarberCell.xib; sourceTree = "<group>"; };
+		AAD76E3E26E0C162003C1128 /* Reservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reservation.swift; sourceTree = "<group>"; };
 		AADDC33E26DA649700E331B0 /* Kurly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kurly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AADDC34126DA649700E331B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AADDC34326DA649700E331B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +66,7 @@
 		AADDC35B26DA861A00E331B0 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		AADDC35D26DA864E00E331B0 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		AADDC35F26DB87F500E331B0 /* TextFieldDesigner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldDesigner.swift; sourceTree = "<group>"; };
+		C261DDF122BA98837F267B15 /* Pods-Kurly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kurly.release.xcconfig"; path = "Target Support Files/Pods-Kurly/Pods-Kurly.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +74,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9451DC2777F0E3B226B91F4F /* Pods_Kurly.framework in Frameworks */,
+				AA9E0D5626DE415400BA5FA0 /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82B81393ECE81816A4132A9B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8944C44807ADFB8599FBDE08 /* Pods-Kurly.debug.xcconfig */,
+				C261DDF122BA98837F267B15 /* Pods-Kurly.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		AADDC33526DA649700E331B0 = {
 			isa = PBXGroup;
 			children = (
 				AADDC34026DA649700E331B0 /* Kurly */,
 				AADDC33F26DA649700E331B0 /* Products */,
+				82B81393ECE81816A4132A9B /* Pods */,
+				E096246121056B69AC8D5690 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -72,6 +120,8 @@
 				AADDC34D26DA649800E331B0 /* Assets.xcassets */,
 				AADDC34F26DA649800E331B0 /* LaunchScreen.storyboard */,
 				AADDC35226DA649800E331B0 /* Info.plist */,
+				AA9E0D4826DBD28600BA5FA0 /* Constants.swift */,
+				AA9E0D4426DBC6C800BA5FA0 /* GoogleService-Info.plist */,
 				AADDC34A26DA649700E331B0 /* Kurly.xcdatamodeld */,
 			);
 			path = Kurly;
@@ -82,6 +132,10 @@
 			children = (
 				AADDC34726DA649700E331B0 /* Main.storyboard */,
 				AADDC35F26DB87F500E331B0 /* TextFieldDesigner.swift */,
+				AA9E0D4C26DCCBC000BA5FA0 /* CustomerCell.swift */,
+				AA9E0D4D26DCCBC000BA5FA0 /* CustomerCell.xib */,
+				AAD76E3A26DFB8A0003C1128 /* BarberCell.swift */,
+				AAD76E3B26DFB8A0003C1128 /* BarberCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -90,8 +144,15 @@
 			isa = PBXGroup;
 			children = (
 				AADDC34526DA649700E331B0 /* ViewController.swift */,
+				AA9E0D4A26DBF47D00BA5FA0 /* SideMenuViewController.swift */,
+				AAAA1F9F26E0EDDC0026FB50 /* CustomerSideMenuViewController.swift */,
 				AADDC35B26DA861A00E331B0 /* LoginViewController.swift */,
+				AA9E0D5026DCFB8200BA5FA0 /* SettingsViewController.swift */,
+				AAD76E3826DFA8C5003C1128 /* CustomerBarberViewController.swift */,
+				AA9E0D5226DE2E5B00BA5FA0 /* CustomerViewController.swift */,
 				AADDC35D26DA864E00E331B0 /* SignupViewController.swift */,
+				AA9E0D4226DBB5D300BA5FA0 /* BarberViewController.swift */,
+				AAAA1FA126E0F3270026FB50 /* CustomerReservationsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -99,8 +160,18 @@
 		AADDC35A26DA85CC00E331B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AA9E0D4626DBCE3400BA5FA0 /* Error.swift */,
+				AAD76E3E26E0C162003C1128 /* Reservation.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E096246121056B69AC8D5690 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AA457DAF92604718902AFB7C /* Pods_Kurly.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,15 +181,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AADDC35526DA649800E331B0 /* Build configuration list for PBXNativeTarget "Kurly" */;
 			buildPhases = (
+				DE729659213FE89ED59B3DD8 /* [CP] Check Pods Manifest.lock */,
 				AADDC33A26DA649700E331B0 /* Sources */,
 				AADDC33B26DA649700E331B0 /* Frameworks */,
 				AADDC33C26DA649700E331B0 /* Resources */,
+				222B5995E200A11B7D017EB7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Kurly;
+			packageProductDependencies = (
+				AA9E0D5526DE415400BA5FA0 /* IQKeyboardManagerSwift */,
+			);
 			productName = Kurly;
 			productReference = AADDC33E26DA649700E331B0 /* Kurly.app */;
 			productType = "com.apple.product-type.application";
@@ -146,6 +222,9 @@
 				Base,
 			);
 			mainGroup = AADDC33526DA649700E331B0;
+			packageReferences = (
+				AA9E0D5426DE415400BA5FA0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+			);
 			productRefGroup = AADDC33F26DA649700E331B0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -161,12 +240,57 @@
 			buildActionMask = 2147483647;
 			files = (
 				AADDC35126DA649800E331B0 /* LaunchScreen.storyboard in Resources */,
+				AAD76E3D26DFB8A0003C1128 /* BarberCell.xib in Resources */,
+				AA9E0D4526DBC6C800BA5FA0 /* GoogleService-Info.plist in Resources */,
 				AADDC34E26DA649800E331B0 /* Assets.xcassets in Resources */,
+				AA9E0D4F26DCCBC000BA5FA0 /* CustomerCell.xib in Resources */,
 				AADDC34926DA649700E331B0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		222B5995E200A11B7D017EB7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kurly/Pods-Kurly-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Kurly/Pods-Kurly-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Kurly/Pods-Kurly-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE729659213FE89ED59B3DD8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kurly-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		AADDC33A26DA649700E331B0 /* Sources */ = {
@@ -175,10 +299,22 @@
 			files = (
 				AADDC35E26DA864E00E331B0 /* SignupViewController.swift in Sources */,
 				AADDC34626DA649700E331B0 /* ViewController.swift in Sources */,
+				AA9E0D4326DBB5D300BA5FA0 /* BarberViewController.swift in Sources */,
 				AADDC34C26DA649700E331B0 /* Kurly.xcdatamodeld in Sources */,
+				AA9E0D4B26DBF47D00BA5FA0 /* SideMenuViewController.swift in Sources */,
 				AADDC34226DA649700E331B0 /* AppDelegate.swift in Sources */,
+				AA9E0D5326DE2E5B00BA5FA0 /* CustomerViewController.swift in Sources */,
+				AA9E0D4926DBD28600BA5FA0 /* Constants.swift in Sources */,
+				AAAA1FA226E0F3270026FB50 /* CustomerReservationsViewController.swift in Sources */,
+				AA9E0D4E26DCCBC000BA5FA0 /* CustomerCell.swift in Sources */,
+				AAD76E3C26DFB8A0003C1128 /* BarberCell.swift in Sources */,
+				AAD76E3F26E0C162003C1128 /* Reservation.swift in Sources */,
 				AADDC35C26DA861A00E331B0 /* LoginViewController.swift in Sources */,
+				AAD76E3926DFA8C5003C1128 /* CustomerBarberViewController.swift in Sources */,
 				AADDC34426DA649700E331B0 /* SceneDelegate.swift in Sources */,
+				AA9E0D5126DCFB8200BA5FA0 /* SettingsViewController.swift in Sources */,
+				AA9E0D4726DBCE3400BA5FA0 /* Error.swift in Sources */,
+				AAAA1FA026E0EDDC0026FB50 /* CustomerSideMenuViewController.swift in Sources */,
 				AADDC36026DB87F500E331B0 /* TextFieldDesigner.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -323,6 +459,7 @@
 		};
 		AADDC35626DA649800E331B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8944C44807ADFB8599FBDE08 /* Pods-Kurly.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -342,6 +479,7 @@
 		};
 		AADDC35726DA649800E331B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C261DDF122BA98837F267B15 /* Pods-Kurly.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -381,6 +519,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AA9E0D5426DE415400BA5FA0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AA9E0D5526DE415400BA5FA0 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AA9E0D5426DE415400BA5FA0 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		AADDC34A26DA649700E331B0 /* Kurly.xcdatamodeld */ = {

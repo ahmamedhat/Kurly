@@ -18,15 +18,6 @@ class ViewController: UIViewController {
         signupButton.layer.cornerRadius = 10
         
     }
-    
-    @IBAction func loginPressed(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func signupPressed(_ sender: UIButton) {
-        
-    }
-    
 
 }
 
