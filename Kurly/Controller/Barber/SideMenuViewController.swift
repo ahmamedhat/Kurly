@@ -17,6 +17,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.sideMenuCellIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
+        navigationItem.title = getLoggedInUser()!.name
     }
 
   
@@ -36,13 +37,27 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
 
-        if (indexPath.row == 1) {
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: K.barberSideMenuToEditProfile, sender: self)
+        }
+        else if (indexPath.row == 1) {
             performSegue(withIdentifier: K.settingsSegue, sender: self)
 
         }
-        else if indexPath.row == 2 {
-            
-        }
+        
     }
-
+    
+    func getLoggedInUser() -> User? {
+        if let data = UserDefaults.standard.data(forKey: "User") {
+            do {
+                let decoder = JSONDecoder()
+                let user = try decoder.decode(User.self, from: data)
+                return user
+            } catch {
+                print("Unable to Decode Note (\(error))")
+            }
+        }
+        return nil
+    }
+    
 }

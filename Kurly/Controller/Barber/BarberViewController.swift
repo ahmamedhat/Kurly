@@ -65,11 +65,21 @@ class BarberViewController: UIViewController,UITableViewDataSource,UITableViewDe
         cell.serviceLabel.text = servicesInString[indexPath.row]
         cell.timeLabel.text = timesInString[indexPath.row]
         cell.selectionStyle = .none
+
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: K.barberToCustomerReservation, sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == K.barberToCustomerReservation {
+            let destinationVC = segue.destination as! BarberCustomerViewController
+            destinationVC.navigationItem.title = reservations[tableView.indexPathForSelectedRow!.row].customerName
+            destinationVC.reservation = reservations[tableView.indexPathForSelectedRow!.row]
+        }
     }
     
     func loadData() {
@@ -120,16 +130,8 @@ class BarberViewController: UIViewController,UITableViewDataSource,UITableViewDe
         for reservation in reservations {
             times.append(reservation.timeOfReservation!)
         }
-//        var calendar = Calendar.current
-//        if let timeZone = TimeZone(secondsFromGMT: 7200) {
-//           calendar.timeZone = timeZone
-//        }
         
         for time in times {
-//            let hour = calendar.component(.hour, from: time)
-//            let minute = calendar.component(.minute, from: time)
-            
-//            timesInString.append("\(hour):\(minute)")
             let formatter = DateFormatter()
             formatter.dateFormat = "hh:mm a"
             let hourString = formatter.string(from: time)

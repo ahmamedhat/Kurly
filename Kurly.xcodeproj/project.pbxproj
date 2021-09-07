@@ -20,6 +20,10 @@
 		AA9E0D5626DE415400BA5FA0 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AA9E0D5526DE415400BA5FA0 /* IQKeyboardManagerSwift */; };
 		AAAA1FA026E0EDDC0026FB50 /* CustomerSideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA1F9F26E0EDDC0026FB50 /* CustomerSideMenuViewController.swift */; };
 		AAAA1FA226E0F3270026FB50 /* CustomerReservationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA1FA126E0F3270026FB50 /* CustomerReservationsViewController.swift */; };
+		AAAA1FA426E2792D0026FB50 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA1FA326E2792D0026FB50 /* User.swift */; };
+		AAAA1FA626E2AE030026FB50 /* BarberEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA1FA526E2AE030026FB50 /* BarberEditProfileViewController.swift */; };
+		AAAA1FA826E2AE140026FB50 /* CustomerEditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA1FA726E2AE140026FB50 /* CustomerEditProfileViewController.swift */; };
+		AAAA1FAC26E4C57E0026FB50 /* BarberCustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAA1FAB26E4C57E0026FB50 /* BarberCustomerViewController.swift */; };
 		AAD76E3926DFA8C5003C1128 /* CustomerBarberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD76E3826DFA8C5003C1128 /* CustomerBarberViewController.swift */; };
 		AAD76E3C26DFB8A0003C1128 /* BarberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD76E3A26DFB8A0003C1128 /* BarberCell.swift */; };
 		AAD76E3D26DFB8A0003C1128 /* BarberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAD76E3B26DFB8A0003C1128 /* BarberCell.xib */; };
@@ -50,6 +54,10 @@
 		AA9E0D5226DE2E5B00BA5FA0 /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
 		AAAA1F9F26E0EDDC0026FB50 /* CustomerSideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerSideMenuViewController.swift; sourceTree = "<group>"; };
 		AAAA1FA126E0F3270026FB50 /* CustomerReservationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerReservationsViewController.swift; sourceTree = "<group>"; };
+		AAAA1FA326E2792D0026FB50 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AAAA1FA526E2AE030026FB50 /* BarberEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberEditProfileViewController.swift; sourceTree = "<group>"; };
+		AAAA1FA726E2AE140026FB50 /* CustomerEditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerEditProfileViewController.swift; sourceTree = "<group>"; };
+		AAAA1FAB26E4C57E0026FB50 /* BarberCustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberCustomerViewController.swift; sourceTree = "<group>"; };
 		AAD76E3826DFA8C5003C1128 /* CustomerBarberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerBarberViewController.swift; sourceTree = "<group>"; };
 		AAD76E3A26DFB8A0003C1128 /* BarberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarberCell.swift; sourceTree = "<group>"; };
 		AAD76E3B26DFB8A0003C1128 /* BarberCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BarberCell.xib; sourceTree = "<group>"; };
@@ -89,6 +97,30 @@
 				C261DDF122BA98837F267B15 /* Pods-Kurly.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		AAAA1FA926E383C90026FB50 /* Barber */ = {
+			isa = PBXGroup;
+			children = (
+				AA9E0D4A26DBF47D00BA5FA0 /* SideMenuViewController.swift */,
+				AA9E0D5026DCFB8200BA5FA0 /* SettingsViewController.swift */,
+				AAAA1FA526E2AE030026FB50 /* BarberEditProfileViewController.swift */,
+				AA9E0D4226DBB5D300BA5FA0 /* BarberViewController.swift */,
+				AAAA1FAB26E4C57E0026FB50 /* BarberCustomerViewController.swift */,
+			);
+			path = Barber;
+			sourceTree = "<group>";
+		};
+		AAAA1FAA26E383E60026FB50 /* Customer */ = {
+			isa = PBXGroup;
+			children = (
+				AAAA1F9F26E0EDDC0026FB50 /* CustomerSideMenuViewController.swift */,
+				AAD76E3826DFA8C5003C1128 /* CustomerBarberViewController.swift */,
+				AAAA1FA726E2AE140026FB50 /* CustomerEditProfileViewController.swift */,
+				AA9E0D5226DE2E5B00BA5FA0 /* CustomerViewController.swift */,
+				AAAA1FA126E0F3270026FB50 /* CustomerReservationsViewController.swift */,
+			);
+			path = Customer;
 			sourceTree = "<group>";
 		};
 		AADDC33526DA649700E331B0 = {
@@ -144,15 +176,10 @@
 			isa = PBXGroup;
 			children = (
 				AADDC34526DA649700E331B0 /* ViewController.swift */,
-				AA9E0D4A26DBF47D00BA5FA0 /* SideMenuViewController.swift */,
-				AAAA1F9F26E0EDDC0026FB50 /* CustomerSideMenuViewController.swift */,
 				AADDC35B26DA861A00E331B0 /* LoginViewController.swift */,
-				AA9E0D5026DCFB8200BA5FA0 /* SettingsViewController.swift */,
-				AAD76E3826DFA8C5003C1128 /* CustomerBarberViewController.swift */,
-				AA9E0D5226DE2E5B00BA5FA0 /* CustomerViewController.swift */,
 				AADDC35D26DA864E00E331B0 /* SignupViewController.swift */,
-				AA9E0D4226DBB5D300BA5FA0 /* BarberViewController.swift */,
-				AAAA1FA126E0F3270026FB50 /* CustomerReservationsViewController.swift */,
+				AAAA1FA926E383C90026FB50 /* Barber */,
+				AAAA1FAA26E383E60026FB50 /* Customer */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -162,6 +189,7 @@
 			children = (
 				AA9E0D4626DBCE3400BA5FA0 /* Error.swift */,
 				AAD76E3E26E0C162003C1128 /* Reservation.swift */,
+				AAAA1FA326E2792D0026FB50 /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -299,12 +327,15 @@
 			files = (
 				AADDC35E26DA864E00E331B0 /* SignupViewController.swift in Sources */,
 				AADDC34626DA649700E331B0 /* ViewController.swift in Sources */,
+				AAAA1FA826E2AE140026FB50 /* CustomerEditProfileViewController.swift in Sources */,
 				AA9E0D4326DBB5D300BA5FA0 /* BarberViewController.swift in Sources */,
+				AAAA1FA626E2AE030026FB50 /* BarberEditProfileViewController.swift in Sources */,
 				AADDC34C26DA649700E331B0 /* Kurly.xcdatamodeld in Sources */,
 				AA9E0D4B26DBF47D00BA5FA0 /* SideMenuViewController.swift in Sources */,
 				AADDC34226DA649700E331B0 /* AppDelegate.swift in Sources */,
 				AA9E0D5326DE2E5B00BA5FA0 /* CustomerViewController.swift in Sources */,
 				AA9E0D4926DBD28600BA5FA0 /* Constants.swift in Sources */,
+				AAAA1FA426E2792D0026FB50 /* User.swift in Sources */,
 				AAAA1FA226E0F3270026FB50 /* CustomerReservationsViewController.swift in Sources */,
 				AA9E0D4E26DCCBC000BA5FA0 /* CustomerCell.swift in Sources */,
 				AAD76E3C26DFB8A0003C1128 /* BarberCell.swift in Sources */,
@@ -314,6 +345,7 @@
 				AADDC34426DA649700E331B0 /* SceneDelegate.swift in Sources */,
 				AA9E0D5126DCFB8200BA5FA0 /* SettingsViewController.swift in Sources */,
 				AA9E0D4726DBCE3400BA5FA0 /* Error.swift in Sources */,
+				AAAA1FAC26E4C57E0026FB50 /* BarberCustomerViewController.swift in Sources */,
 				AAAA1FA026E0EDDC0026FB50 /* CustomerSideMenuViewController.swift in Sources */,
 				AADDC36026DB87F500E331B0 /* TextFieldDesigner.swift in Sources */,
 			);

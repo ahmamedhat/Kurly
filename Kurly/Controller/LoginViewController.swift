@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestoreSwift
 import NVActivityIndicatorView
 
 
@@ -21,6 +22,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     
     let db = Firestore.firestore()
+    
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +52,12 @@ class LoginViewController: UIViewController {
                             print(error)
                         }
                         else {
-                            let result = document!.data()!
-                            if result["isBarber"] as! Int == 0 {
+                            let user = document.flatMap({ ds -> User? in
+                                return try? ds.data(as: User.self)
+                            })
+                            self.saveUserData(user: user!)
+                            
+                            if user?.isBarber == false {
                                 self.performSegue(withIdentifier: K.customerLoginSegue, sender: self)
                             }else {
                                 self.performSegue(withIdentifier: K.barberLoginSegue, sender: self)
@@ -60,6 +67,17 @@ class LoginViewController: UIViewController {
                     }
                 }
             }
+        }
+    }
+    
+    func saveUserData(user: User) {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(user)
+            self.defaults.set(data, forKey: "User")
+
+        } catch {
+            print("Unable to Encode Note (\(error))")
         }
     }
     

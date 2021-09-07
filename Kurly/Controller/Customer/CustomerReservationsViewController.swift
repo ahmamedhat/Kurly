@@ -101,16 +101,8 @@ class CustomerReservationsViewController: UIViewController, UITableViewDataSourc
         for reservation in reservations {
             times.append(reservation.timeOfReservation!)
         }
-//        var calendar = Calendar.current
-//        if let timeZone = TimeZone(secondsFromGMT: 7200) {
-//           calendar.timeZone = timeZone
-//        }
         
         for time in times {
-//            let hour = calendar.component(.hour, from: time)
-//            let minute = calendar.component(.minute, from: time)
-            
-//            timesInString.append("\(hour):\(minute)")
             let formatter = DateFormatter()
             formatter.dateFormat = "hh:mm a"
             let hourString = formatter.string(from: time)

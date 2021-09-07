@@ -10,6 +10,7 @@ import UIKit
 class CustomerSideMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var userIcon: UIBarButtonItem!
     
     let labels = ["Edit Profile" , "Reservations" , "Settings"]
     override func viewDidLoad() {
@@ -17,6 +18,8 @@ class CustomerSideMenuViewController: UIViewController, UITableViewDelegate, UIT
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.customerSideMenuCellIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
+        navigationItem.title = getLoggedInUser()!.name
+
     }
 
   
@@ -35,15 +38,30 @@ class CustomerSideMenuViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
-        if (indexPath.row == 1) {
+        
+        if indexPath.row == 0 {
+            performSegue(withIdentifier: K.customerSideMenuToEditProfile, sender: self)
+        }
+        else if (indexPath.row == 1) {
             performSegue(withIdentifier: K.customerSideMenuToReservations, sender: self)
 
         }
-        else if indexPath.row == 2 {
-            
-        }
+        
     }
     
+    
+    func getLoggedInUser() -> User? {
+        if let data = UserDefaults.standard.data(forKey: "User") {
+            do {
+                let decoder = JSONDecoder()
+                let user = try decoder.decode(User.self, from: data)
+                return user
+            } catch {
+                print("Unable to Decode Note (\(error))")
+            }
+        }
+        return nil
+    }
 
+    
 }

@@ -23,6 +23,10 @@ struct K {
     static let settingsSegue = "sideMenuToSettings"
     static let settingsCell = "settingsCell"
     
+    static let barberSideMenuToEditProfile = "barberSideMenuToEditProfile"
+    
+    static let barberToCustomerReservation = "barberToCustomerReservation"
+    
 //    Customer
     
     static let customerSignupSegue = "signupToCustomer"
@@ -34,5 +38,32 @@ struct K {
     
     static let customerSideMenuCellIdentifier = "customerSideMenu"
     static let customerSideMenuToReservations = "customerSideMenuToReservations"
+    static let customerSideMenuToEditProfile = "customerSideMenuToEditProfile"
+    
+    struct functions {
+        static func getLoggedInUser() -> User? {
+            if let data = UserDefaults.standard.data(forKey: "User") {
+                do {
+                    let decoder = JSONDecoder()
+                    let user = try decoder.decode(User.self, from: data)
+                    return user
+                } catch {
+                    print("Unable to Decode Note (\(error))")
+                }
+            }
+            return nil
+        }
+        
+        static func saveUserData(user: User) {
+            do {
+                let encoder = JSONEncoder()
+                let data = try encoder.encode(user)
+                UserDefaults.standard.set(data, forKey: "User")
+
+            } catch {
+                print("Unable to Encode Note (\(error))")
+            }
+        }
+    }
     
 }

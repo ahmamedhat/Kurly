@@ -12,19 +12,20 @@ import ViewAnimator
 class CustomerViewController: UIViewController,UITableViewDataSource,UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating {
     
     
-
+    
     @IBOutlet weak var viewTable: UITableView!
     @IBOutlet weak var logoutButton: UIBarButtonItem!
     
     private let searchController = UISearchController(searchResultsController: nil)
-
+    
     let db = Firestore.firestore()
-
+    
     var matches : [String] = []
     var barbers : [String] = []
     var barbersEmail : [String] = []
     var barbersEmailMatches: [String] = []
     var searching = false
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +35,6 @@ class CustomerViewController: UIViewController,UITableViewDataSource,UITableView
         viewTable.delegate = self
         viewTable.isHidden = true
         viewTable.register(UINib(nibName: K.customerCellNibName, bundle: nil), forCellReuseIdentifier: K.customerCellIdentifier)
-
         
         searchController.searchBar.delegate = self
         searchController.searchResultsUpdater = self
@@ -43,12 +43,12 @@ class CustomerViewController: UIViewController,UITableViewDataSource,UITableView
         definesPresentationContext = true
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
-
+                
         self.loadData()
-
+        
     }
-
-
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         let animation = AnimationType.from(direction: .bottom, offset: 300)
@@ -56,13 +56,13 @@ class CustomerViewController: UIViewController,UITableViewDataSource,UITableView
         navigationItem.hidesSearchBarWhenScrolling = true
         navigationItem.searchController?.searchBar.isHidden = false
         viewTable.isHidden = false
-
+        
     }
-
+    
     override func viewDidDisappear(_ animated: Bool) {
         navigationItem.searchController?.searchBar.isHidden = true
         viewTable.isHidden = true
-
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,7 +82,7 @@ class CustomerViewController: UIViewController,UITableViewDataSource,UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: K.customerToBarbers, sender: self)
-
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -107,7 +107,6 @@ class CustomerViewController: UIViewController,UITableViewDataSource,UITableView
         })
     }
     
-   
     
     func updateSearchResults(for searchController: UISearchController) {
         if searchController.searchBar.text!.trimmingCharacters(in: .whitespaces).isEmpty {
@@ -148,10 +147,7 @@ class CustomerViewController: UIViewController,UITableViewDataSource,UITableView
                 destinationVc.barberEmail = searching ? barbersEmailMatches[index.row] : barbersEmail[index.row]
             }
         }
-        
-
     }
-    
     
     
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {

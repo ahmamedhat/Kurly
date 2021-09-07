@@ -23,7 +23,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var signupButton: UIButton!
     
     private let db = Firestore.firestore()
-    
+    let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,10 +53,22 @@ class SignupViewController: UIViewController {
                 }
                 else {
                     self.db.collection("users").document(Auth.auth().currentUser!.email!).setData(["isBarber": self.isBarberSwitch.isOn , "email": Auth.auth().currentUser!.email! , "name": name])
-                                                                                                    
+                    
+                    self.saveUserData(user: User(email: Auth.auth().currentUser!.email!, name: name, isBarber: self.isBarberSwitch.isOn))
                     self.isBarberSwitch.isOn ? self.performSegue(withIdentifier: K.barberSignUpSegue , sender: self) : self.performSegue(withIdentifier: K.customerSignupSegue , sender: self)
                 }
             }
+        }
+    }
+    
+    func saveUserData(user: User) {
+        do {
+            let encoder = JSONEncoder()
+            let data = try encoder.encode(user)
+            self.defaults.set(data, forKey: "User")
+
+        } catch {
+            print("Unable to Encode Note (\(error))")
         }
     }
     
