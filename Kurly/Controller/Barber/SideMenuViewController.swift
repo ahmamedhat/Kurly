@@ -17,6 +17,7 @@ class SideMenuViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: K.sideMenuCellIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
+        
         navigationItem.title = getLoggedInUser()!.name
     }
 

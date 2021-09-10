@@ -29,7 +29,7 @@ class BarberViewController: UIViewController,UITableViewDataSource,UITableViewDe
         tableView.delegate = self
         tableView.isHidden = true
         tableView.register(UINib(nibName: K.customerCellNibName, bundle: nil) , forCellReuseIdentifier: K.customerCellIdentifier)
-        loadData()
+        
         
         tableView.contentInsetAdjustmentBehavior = .never
         navigationItem.largeTitleDisplayMode = .automatic
@@ -37,6 +37,7 @@ class BarberViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        loadData()
         DispatchQueue.main.async { [weak self] in
             self?.navigationController?.navigationBar.sizeToFit()
         }
@@ -83,6 +84,8 @@ class BarberViewController: UIViewController,UITableViewDataSource,UITableViewDe
     }
     
     func loadData() {
+        print("passed")
+        reservations.removeAll()
         db.collection("reservations").whereField("barberEmail", isEqualTo: Auth.auth().currentUser!.email!).getDocuments { qs, error in
             if let error = error {
                 print(error)
@@ -97,6 +100,8 @@ class BarberViewController: UIViewController,UITableViewDataSource,UITableViewDe
                 }
                 self.getServicesString()
                 self.getTimeOfReservation()
+                self.filterReservations()
+                self.sortReservations()
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -140,15 +145,38 @@ class BarberViewController: UIViewController,UITableViewDataSource,UITableViewDe
         
     }
     
-    
-    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
-        do {
-            try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)
+    func filterReservations() {
+        var date = Date()
+        date.addTimeInterval(TimeInterval(-1 * 60.0 * 60.0))
+        let newReservations = reservations.filter { reservation in
+            return reservation.timeOfReservation! > date
         }
-        catch {
-            ErrorHandler.showError(title: "Error Logging Out", errorBody: error.localizedDescription, senderView: self)
+        let filteredReservations = reservations.filter { reservation in
+            return reservation.timeOfReservation! < date
         }
+        for reservation in filteredReservations {
+            db.collection("reservations").document(reservation.id!).delete(){err in
+                if let error = err {
+                    print(error)
+                }
+                else {
+                    
+                }
+                
+            }
+        }
+        self.reservations = newReservations
     }
     
+    func sortReservations() {
+        let sortedReservations = reservations.sorted(by: { lhs, rhs in
+            return lhs.timeOfReservation! < rhs.timeOfReservation!
+        })
+        reservations = sortedReservations
+    }
+    
+    
+    @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
+        K.functions.logOut(view: self as UIViewController, navigationController: navigationController!)
+    }
 }

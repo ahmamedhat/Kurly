@@ -384,10 +384,11 @@
                                 </state>
                                 <connections>
                                     <action selector="buttonPressed:" destination="Jpn-kr-3aT" eventType="touchUpInside" id="5T8-M0-kaK"/>
+                                    <action selector="finishPressed:" destination="Yzr-kd-kpw" eventType="touchUpInside" id="O2g-XT-ut7"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exptected to finsih at" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE3-Qt-AWo">
-                                <rect key="frame" x="90" y="661" width="234" height="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exptected to finsih at" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oE3-Qt-AWo">
+                                <rect key="frame" x="10" y="661" width="394" height="26"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
                                 <color key="textColor" red="0.044699817895889282" green="0.02620803564786911" blue="0.014276370406150818" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -403,13 +404,14 @@
                             <constraint firstItem="4ce-An-xfj" firstAttribute="top" secondItem="oE3-Qt-AWo" secondAttribute="bottom" constant="35" id="IEf-xs-Ct7"/>
                             <constraint firstItem="kJ2-YX-WBt" firstAttribute="bottom" secondItem="4ce-An-xfj" secondAttribute="bottom" constant="70" id="UdE-jL-6cb"/>
                             <constraint firstItem="kJ2-YX-WBt" firstAttribute="trailing" secondItem="4ce-An-xfj" secondAttribute="trailing" constant="110" id="Udj-qc-ByF"/>
-                            <constraint firstItem="oE3-Qt-AWo" firstAttribute="leading" secondItem="kJ2-YX-WBt" secondAttribute="leading" constant="90" id="ayF-ny-2Tf"/>
-                            <constraint firstItem="kJ2-YX-WBt" firstAttribute="trailing" secondItem="oE3-Qt-AWo" secondAttribute="trailing" constant="90" id="qyo-5Y-Xoj"/>
+                            <constraint firstItem="oE3-Qt-AWo" firstAttribute="leading" secondItem="kJ2-YX-WBt" secondAttribute="leading" constant="10" id="ayF-ny-2Tf"/>
+                            <constraint firstItem="kJ2-YX-WBt" firstAttribute="trailing" secondItem="oE3-Qt-AWo" secondAttribute="trailing" constant="10" id="qyo-5Y-Xoj"/>
                             <constraint firstItem="4ce-An-xfj" firstAttribute="leading" secondItem="kJ2-YX-WBt" secondAttribute="leading" constant="110" id="xx0-gs-2dS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="wkL-6V-VE7"/>
                     <connections>
+                        <outlet property="expectedFinish" destination="oE3-Qt-AWo" id="pAu-ME-r2p"/>
                         <outlet property="stackView" destination="s80-Rh-WQP" id="WFv-qF-wtw"/>
                     </connections>
                 </viewController>

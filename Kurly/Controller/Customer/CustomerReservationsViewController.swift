@@ -26,7 +26,6 @@ class CustomerReservationsViewController: UIViewController, UITableViewDataSourc
         tableView.register(UINib(nibName: K.customerCellNibName, bundle: nil), forCellReuseIdentifier: K.customerCellIdentifier)
         tableView.isHidden = true
         
-        loadData()
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -34,6 +33,10 @@ class CustomerReservationsViewController: UIViewController, UITableViewDataSourc
         tableView.isHidden = false
         let animation = AnimationType.from(direction: .bottom, offset: 300)
         UIView.animate(views: tableView.visibleCells, animations: [animation])
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -68,6 +71,7 @@ class CustomerReservationsViewController: UIViewController, UITableViewDataSourc
                 }
                 self.getServicesString()
                 self.getTimeOfReservation()
+                self.filterReservations()
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -109,6 +113,29 @@ class CustomerReservationsViewController: UIViewController, UITableViewDataSourc
             timesInString.append(hourString)
         }
         
+    }
+    
+    func filterReservations() {
+        var date = Date()
+        date.addTimeInterval(TimeInterval(-1 * 60.0 * 60.0))
+        let newReservations = reservations.filter { reservation in
+            return reservation.timeOfReservation! > date
+        }
+        let filteredReservations = reservations.filter { reservation in
+            return reservation.timeOfReservation! < date
+        }
+        for reservation in filteredReservations {
+            db.collection("reservations").document(reservation.id!).delete(){err in
+                if let error = err {
+                    print(error)
+                }
+                else {
+                    
+                }
+                
+            }
+        }
+        self.reservations = newReservations
     }
 
 }

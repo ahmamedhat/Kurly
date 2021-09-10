@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct K {
     
@@ -40,6 +41,8 @@ struct K {
     static let customerSideMenuToReservations = "customerSideMenuToReservations"
     static let customerSideMenuToEditProfile = "customerSideMenuToEditProfile"
     
+//    Most Used Functions
+    
     struct functions {
         static func getLoggedInUser() -> User? {
             if let data = UserDefaults.standard.data(forKey: "User") {
@@ -59,10 +62,54 @@ struct K {
                 let encoder = JSONEncoder()
                 let data = try encoder.encode(user)
                 UserDefaults.standard.set(data, forKey: "User")
-
+                
             } catch {
                 print("Unable to Encode Note (\(error))")
             }
+        }
+        
+        
+        static func logOut(view: UIViewController , navigationController: UINavigationController) {
+            do {
+                try Auth.auth().signOut()
+                navigationController.popToRootViewController(animated: true)
+            }
+            catch {
+                ErrorHandler.showError(title: "Error Logging Out", errorBody: error.localizedDescription, senderView: view)
+            }
+        }
+        
+        static func getServicesString(with reservation: Reservation) -> Int {
+            var allServicesTime = 0
+            let services = reservation.services
+            for service in services {
+                switch service {
+                case "Haircut":
+                    allServicesTime += 30
+                case "Beard Trim":
+                    allServicesTime += 10
+                case "Skin Care":
+                    allServicesTime += 15
+                case "Hair Creatine":
+                    allServicesTime += 25
+                case "Hair Dryer":
+                    allServicesTime += 10
+                default:
+                    return allServicesTime
+                }
+                
+            }
+            return allServicesTime
+        }
+    
+        
+        static func getTimeOfReservation(with timeOfReservation: Date ,_ time: Int) -> String {
+            let formatter = DateFormatter()
+            formatter.dateFormat = "hh:mm a"
+            let calender = Calendar.current
+            let expectedFinishTime = calender.date(byAdding: DateComponents(minute: time), to: timeOfReservation)
+            let hourString = formatter.string(from: expectedFinishTime!)
+            return hourString
         }
     }
     

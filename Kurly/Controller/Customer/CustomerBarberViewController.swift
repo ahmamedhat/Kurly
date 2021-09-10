@@ -31,8 +31,11 @@ class CustomerBarberViewController: UIViewController,UITableViewDataSource {
         tableView.register(UINib(nibName: K.barberNibCellName, bundle: nil), forCellReuseIdentifier: K.barbersNameCell)
         tableView.rowHeight = 70.0
         makeReservationButton.layer.cornerRadius = 10
-        loadData()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadData()
     }
         
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -66,6 +69,7 @@ class CustomerBarberViewController: UIViewController,UITableViewDataSource {
             if let document = ds, document.exists {
                 let reservation = Reservation(barberEmail: self.barberEmail, barberName: self.navigationItem.title! , customerEmail: customerEmail!, customerName: document.data()!["name"] as! String, hasExpired: false, services: chosenServices,timeOfReservation: self.timePicker.date)
                 self.addReservation(with: reservation)
+                self.navigationController?.popViewController(animated: true)
             }
             
         }
@@ -92,7 +96,8 @@ class CustomerBarberViewController: UIViewController,UITableViewDataSource {
                     return try? qds.data(as: Reservation.self)
                 })
                 if reservations.count > 0 {
-                    let reservation = reservations[reservations.count-1]
+                    let reservation = self.sortReservations(reservations: reservations)
+                    
                     self.getServicesString(with: reservation)
                 }
                 else {
@@ -109,37 +114,10 @@ class CustomerBarberViewController: UIViewController,UITableViewDataSource {
     }
     
     func getServicesString(with reservation: Reservation) {
-        var allServicesTime = 0
-        let services = reservation.services
-        for service in services {
-            switch service {
-            case "Haircut":
-                allServicesTime += 30
-            case "Beard Trim":
-                allServicesTime += 10
-            case "Skin Care":
-                allServicesTime += 15
-            case "Hair Creatine":
-                allServicesTime += 25
-            case "Hair Dryer":
-                allServicesTime += 10
-            default:
-                return
-            }
-        }
-        getTimeOfReservation(with: reservation.timeOfReservation! , allServicesTime)
-        
-    }
-    
-    func getTimeOfReservation(with timeOfReservation: Date ,_ time: Int) {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "hh:mm a"
-        let calender = Calendar.current
-        let expectedFinishTime = calender.date(byAdding: DateComponents(minute: time), to: timeOfReservation)
-        let hourString = formatter.string(from: expectedFinishTime!)
+        let allServicesTime = K.functions.getServicesString(with: reservation)
+        let hourString = K.functions.getTimeOfReservation(with: reservation.timeOfReservation!, allServicesTime)
         isAvailableLabel.text = "\(navigationItem.title!) is available from \(hourString)"
         setTimePicker(with: hourString)
-        
     }
 
     func setTimePicker(with time:String) {
@@ -175,6 +153,13 @@ class CustomerBarberViewController: UIViewController,UITableViewDataSource {
         timePicker.setDate(startDate as Date, animated: true)
         timePicker.reloadInputViews()
         activityIndicator.stopAnimating()
+    }
+    
+    func sortReservations(reservations: [Reservation]) -> Reservation {
+        let newReservations = reservations.sorted(by: { lhs, rhs in
+            return lhs.timeOfReservation! > rhs.timeOfReservation!
+        })
+        return newReservations[0]
     }
     
 }

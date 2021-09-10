@@ -151,13 +151,7 @@ class CustomerViewController: UIViewController,UITableViewDataSource,UITableView
     
     
     @IBAction func logoutPressed(_ sender: UIBarButtonItem) {
-        do {
-            try Auth.auth().signOut()
-            navigationController?.popToRootViewController(animated: true)
-        }
-        catch {
-            ErrorHandler.showError(title: "Error Logging Out", errorBody: error.localizedDescription, senderView: self)
-        }
+        K.functions.logOut(view: self as UIViewController, navigationController: navigationController!)
     }
     
 }
